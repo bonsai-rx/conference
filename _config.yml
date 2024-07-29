@@ -1,0 +1,23 @@
+title: Bonsai Developer Conference 2024
+email: conference@bonsai-rx.org
+description: 
+baseurl: "/2024" # the subpath of your site, e.g. /blog
+url: https://conference.bonsai-rx.org # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: bonsai_rx
+github_username:  bonsai-rx
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+include:
+  - _pages
+
+exclude:
+  - "**README.md"
+
+header_pages:
+  - about.md
+  - _pages/welcome.md
