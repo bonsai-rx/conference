@@ -67,7 +67,7 @@ permalink: /program/
 
 **Moderators**: Bruno Cruz 
 
-**Abstract**: One of the most exciting opportunities introduced by the widespread adoption of Bonsai in the neuroscience community is the possibility of standardizing data formats and making reproducible data acquisition and analysis pipelines that allow researchers to immediately access and explore their data as soon as it is collected. In this session we will showcase a set of flexible code generation tools and data formats built around Bonsai that aim to accelerate the integration of rich experimental metadata into data acquisition workflows. These tools provide a seamless bridge for analyzing both data and metadata using Python without sacrificing the flexibility and rapid prototyping needs of modern experimental design in neuroscience. In this session we will discuss best practices for reproducible research, opportunities and current limitations.
+**Abstract**: One of the most exciting opportunities introduced by the widespread adoption of Bonsai is the possibility of standardizing data formats and making reproducible data acquisition and analysis pipelines, allowing researchers to access and explore data as soon as it is collected. In this session we will discuss best practices for reproducible research using Bonsai, and showcase a set of flexible code generation tools and data formats developed to quickly integrate rich experimental metadata into data acquisition workflows. These tools and data formats provide a seamless bridge for analyzing both data and metadata using Python without sacrificing the flexibility and rapid prototyping needs of modern experimental design in neuroscience. We will finish with a discussion on current limitations and future research directions.
 <br>
 <br>
 
