@@ -7,8 +7,10 @@ description: |
   London, UK
 baseurl: "/2024"
 url: https://conference.bonsai.dev
-twitter_username: bonsai_rx
 github_username:  bonsai-rx
+mastodon:
+  - username: bonsai
+    instance: neuromatch.social
 
 # Build settings
 theme: minima
