@@ -1,8 +1,12 @@
-title: Bonsai Developer Conference 2024
+title: Bonsai Conference 2024
+logo: /assets/images/bonsai.svg
 email: conference@bonsai-rx.org
-description: 
-baseurl: "/2024" # the subpath of your site, e.g. /blog
-url: https://conference.bonsai.dev # the base hostname & protocol for your site, e.g. http://example.com
+description: |
+  December 2 to 6, 2024
+  Sainsbury Wellcome Centre
+  London, UK
+baseurl: "/2024"
+url: https://conference.bonsai.dev
 twitter_username: bonsai_rx
 github_username:  bonsai-rx
 
