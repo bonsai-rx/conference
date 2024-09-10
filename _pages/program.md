@@ -41,7 +41,7 @@ permalink: /program/
 
 #### Projects Showcase
 
-**Moderators**: Hugo Marques 
+**Moderators**: Adam Kampff, Hugo Marques 
 
 **Abstract**:  One of the main goals of the Bonsai Developer Conference is to promote collaborations and sharing across the Bonsai community. Projects Showcase will be a unique opportunity to share and discuss your workflows and projects with other power users in the community. We look forward to showcase a broad collection of projects and applications in neuroscience and beyond. We strongly encourage anyone participating in the conference to share projects they would like to present in this session in the registration form.
 <br>
