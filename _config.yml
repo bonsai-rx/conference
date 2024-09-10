@@ -25,4 +25,5 @@ exclude:
 header_pages:
   - about.md
   - _pages/program.md
+  - _pages/accommodation.md
   - _pages/registration.md
