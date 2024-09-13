@@ -12,6 +12,14 @@ mastodon:
   - username: bonsai
     instance: neuromatch.social
 
+# Default OG image
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      image: /assets/images/bonsai.png
+
 # Build settings
 theme: minima
 plugins:
