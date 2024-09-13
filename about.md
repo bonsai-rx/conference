@@ -1,6 +1,7 @@
 ---
 layout: home
 title: About
+image: /assets/images/bonsai.png
 permalink: /
 ---
 
