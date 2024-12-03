@@ -8,7 +8,7 @@
     <PackageReference Include="Bonsai.Core" Version="2.8.5" />
     <PackageReference Include="Bonsai.System" Version="2.8.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="YamlDotNet" Version="16.2.1" />
+    <PackageReference Include="YamlDotNet" Version="13.1.1" />
   </ItemGroup>
 
 </Project>
