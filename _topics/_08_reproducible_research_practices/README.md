@@ -19,3 +19,7 @@ pip install pydantic
     <PackageReference Include="YamlDotNet" Version="16.2.1" />
 ```
 
+6. The repository has two demos: `demo1` and `demo2`. They can be identically. For `demo1`:
+7. Compile the schema and create a valid instance by running the `./src/python/demo1.py` script.
+8. Run the corresponding bonsai workflow by running the `./src/bonsai/demo1.bonsai` script.
+9. Analysis for both demos can be found in the `./src/python/analysis.py` script.
