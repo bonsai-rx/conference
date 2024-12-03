@@ -12,3 +12,4 @@ python -m venv .venv
 .venv/scripts/activate
 pip install pydantic
 ```
+4. Install Bonsai from by running `.bonsai/setup.ps1`. This will bootstrap the environment with the necessary dependencies.
