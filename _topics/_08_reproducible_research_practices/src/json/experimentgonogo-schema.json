@@ -68,7 +68,7 @@
       "title": "NoGoTrial",
       "type": "object"
     },
-    "TrialType": {
+    "Trial": {
       "discriminator": {
         "mapping": {
           "go_trial": "#/definitions/GoTrial",
@@ -95,7 +95,7 @@
     "trials": {
       "description": "List of trials in the experiment",
       "items": {
-        "$ref": "#/definitions/TrialType"
+        "$ref": "#/definitions/Trial"
       },
       "title": "Trials",
       "type": "array"

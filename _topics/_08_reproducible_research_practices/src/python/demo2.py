@@ -26,14 +26,14 @@ class NoGoTrial(_TrialBase):
     penalty: int = Field(description="Penalty for incorrect response")
 
 
-TrialType = TypeAliasType(
-    "TrialType", Annotated[Union[GoTrial, NoGoTrial], Field(discriminator="trial_type")]
+Trial = TypeAliasType(
+    "Trial", Annotated[Union[GoTrial, NoGoTrial], Field(discriminator="trial_type")]
 )
 
 
 class ExperimentGoNoGo(BaseModel):
     animal_id: str = Field(description="ID of the animal")
-    trials: List[TrialType] = Field(description="List of trials in the experiment")
+    trials: List[Trial] = Field(description="List of trials in the experiment")
     rng_seed: Optional[int] = Field(
         default=None, description="Seed for the random number generator"
     )

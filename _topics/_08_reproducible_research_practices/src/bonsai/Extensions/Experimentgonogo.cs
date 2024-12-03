@@ -12,7 +12,7 @@ namespace Experimentgonogo
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.4.0.0 (Newtonsoft.Json v13.0.0.0, YamlDotNet v13.0.0.0)")]
     [Bonsai.CombinatorAttribute()]
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
-    public partial class GoTrial : TrialType
+    public partial class GoTrial : Trial
     {
     
         private double _interTrialInterval = 1D;
@@ -114,7 +114,7 @@ namespace Experimentgonogo
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Bonsai.Sgen", "0.4.0.0 (Newtonsoft.Json v13.0.0.0, YamlDotNet v13.0.0.0)")]
     [Bonsai.CombinatorAttribute()]
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
-    public partial class NoGoTrial : TrialType
+    public partial class NoGoTrial : Trial
     {
     
         private double _interTrialInterval = 1D;
@@ -220,25 +220,25 @@ namespace Experimentgonogo
     [JsonInheritanceAttribute("nogo_trial", typeof(NoGoTrial))]
     [Bonsai.CombinatorAttribute()]
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Source)]
-    public partial class TrialType
+    public partial class Trial
     {
     
-        public TrialType()
+        public Trial()
         {
         }
     
-        protected TrialType(TrialType other)
+        protected Trial(Trial other)
         {
         }
     
-        public System.IObservable<TrialType> Process()
+        public System.IObservable<Trial> Process()
         {
-            return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new TrialType(this)));
+            return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new Trial(this)));
         }
     
-        public System.IObservable<TrialType> Process<TSource>(System.IObservable<TSource> source)
+        public System.IObservable<Trial> Process<TSource>(System.IObservable<TSource> source)
         {
-            return System.Reactive.Linq.Observable.Select(source, _ => new TrialType(this));
+            return System.Reactive.Linq.Observable.Select(source, _ => new Trial(this));
         }
     
         protected virtual bool PrintMembers(System.Text.StringBuilder stringBuilder)
@@ -269,7 +269,7 @@ namespace Experimentgonogo
     
         private string _animalId;
     
-        private System.Collections.Generic.List<TrialType> _trials = new System.Collections.Generic.List<TrialType>();
+        private System.Collections.Generic.List<Trial> _trials = new System.Collections.Generic.List<Trial>();
     
         private int? _rngSeed;
     
@@ -309,7 +309,7 @@ namespace Experimentgonogo
         [Newtonsoft.Json.JsonPropertyAttribute("trials", Required=Newtonsoft.Json.Required.Always)]
         [YamlDotNet.Serialization.YamlMemberAttribute(Alias="trials")]
         [System.ComponentModel.DescriptionAttribute("List of trials in the experiment")]
-        public System.Collections.Generic.List<TrialType> Trials
+        public System.Collections.Generic.List<Trial> Trials
         {
             get
             {
@@ -515,7 +515,7 @@ namespace Experimentgonogo
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Combinator)]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<GoTrial>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<NoGoTrial>))]
-    public partial class MatchTrialType : Bonsai.Expressions.SingleArgumentExpressionBuilder
+    public partial class MatchTrial : Bonsai.Expressions.SingleArgumentExpressionBuilder
     {
     
         public Bonsai.Expressions.TypeMapping Type { get; set; }
@@ -523,21 +523,21 @@ namespace Experimentgonogo
         public override System.Linq.Expressions.Expression Build(System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression> arguments)
         {
             var typeMapping = Type;
-            var returnType = typeMapping != null ? typeMapping.GetType().GetGenericArguments()[0] : typeof(TrialType);
+            var returnType = typeMapping != null ? typeMapping.GetType().GetGenericArguments()[0] : typeof(Trial);
             return System.Linq.Expressions.Expression.Call(
-                typeof(MatchTrialType),
+                typeof(MatchTrial),
                 "Process",
                 new System.Type[] { returnType },
                 System.Linq.Enumerable.Single(arguments));
         }
 
     
-        private static System.IObservable<TResult> Process<TResult>(System.IObservable<TrialType> source)
-            where TResult : TrialType
+        private static System.IObservable<TResult> Process<TResult>(System.IObservable<Trial> source)
+            where TResult : Trial
         {
             return System.Reactive.Linq.Observable.Create<TResult>(observer =>
             {
-                var sourceObserver = System.Reactive.Observer.Create<TrialType>(
+                var sourceObserver = System.Reactive.Observer.Create<Trial>(
                     value =>
                     {
                         var match = value as TResult;
@@ -576,9 +576,9 @@ namespace Experimentgonogo
             return Process<NoGoTrial>(source);
         }
 
-        public System.IObservable<string> Process(System.IObservable<TrialType> source)
+        public System.IObservable<string> Process(System.IObservable<Trial> source)
         {
-            return Process<TrialType>(source);
+            return Process<Trial>(source);
         }
 
         public System.IObservable<string> Process(System.IObservable<ExperimentGoNoGo> source)
@@ -597,7 +597,7 @@ namespace Experimentgonogo
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Transform)]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<GoTrial>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<NoGoTrial>))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<TrialType>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<Trial>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ExperimentGoNoGo>))]
     public partial class DeserializeFromJson : Bonsai.Expressions.SingleArgumentExpressionBuilder
     {
@@ -753,9 +753,9 @@ namespace Experimentgonogo
             return Process<NoGoTrial>(source);
         }
 
-        public System.IObservable<string> Process(System.IObservable<TrialType> source)
+        public System.IObservable<string> Process(System.IObservable<Trial> source)
         {
-            return Process<TrialType>(source);
+            return Process<Trial>(source);
         }
 
         public System.IObservable<string> Process(System.IObservable<ExperimentGoNoGo> source)
@@ -774,7 +774,7 @@ namespace Experimentgonogo
     [Bonsai.WorkflowElementCategoryAttribute(Bonsai.ElementCategory.Transform)]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<GoTrial>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<NoGoTrial>))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<TrialType>))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<Trial>))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bonsai.Expressions.TypeMapping<ExperimentGoNoGo>))]
     public partial class DeserializeFromYaml : Bonsai.Expressions.SingleArgumentExpressionBuilder
     {
@@ -816,7 +816,7 @@ namespace Experimentgonogo
                     .WithTypeInspector(inspector => new YamlDiscriminatorTypeInspector(inspector))
                     .WithTypeDiscriminatingNodeDeserializer(o =>
                     {
-                        AddTypeDiscriminator<TrialType>(o);
+                        AddTypeDiscriminator<Trial>(o);
                     })
                     .Build();
                 return System.Reactive.Linq.Observable.Select(source, value =>
