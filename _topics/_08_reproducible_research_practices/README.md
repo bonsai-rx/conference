@@ -13,3 +13,9 @@ python -m venv .venv
 pip install pydantic
 ```
 4. Install Bonsai from by running `.bonsai/setup.ps1`. This will bootstrap the environment with the necessary dependencies.
+5. Ensure that the `src/bonsai/Extensions.csproj` defines the following dependencies:
+```xml
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="YamlDotNet" Version="16.2.1" />
+```
+
