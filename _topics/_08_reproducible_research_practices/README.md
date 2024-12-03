@@ -16,7 +16,7 @@ pip install pydantic
 5. Ensure that the `src/bonsai/Extensions.csproj` defines the following dependencies:
 ```xml
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="YamlDotNet" Version="16.2.1" />
+    <PackageReference Include="YamlDotNet" Version="13.1.1" />
 ```
 
 6. The repository has two demos: `demo1` and `demo2`. They can be identically. For `demo1`:
