@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=Experiment.json
+trials:
+  - stimuli:
+      - x: 0
+        y: 0
+        orientation: 0
+      - x: 0.5
+        y: 0
+        orientation: 45
+      - x: -0.5
+        y: 0
+        orientation: -45

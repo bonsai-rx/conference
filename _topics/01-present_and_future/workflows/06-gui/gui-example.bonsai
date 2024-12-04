@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.9.0-preview1+76e8ce94db5dd636925244a720164ef8694af513"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:gui="clr-namespace:Bonsai.Gui;assembly=Bonsai.Gui"
+                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
+                 xmlns:zg="clr-namespace:Bonsai.Gui.ZedGraph;assembly=Bonsai.Gui.ZedGraph"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="gui:SliderBuilder">
+        <gui:Enabled>true</gui:Enabled>
+        <gui:Visible>true</gui:Visible>
+        <gui:Minimum>0</gui:Minimum>
+        <gui:Maximum>100</gui:Maximum>
+        <gui:DecimalPlaces xsi:nil="true" />
+        <gui:Value>75.3623188405797</gui:Value>
+      </Expression>
+      <Expression xsi:type="rx:PublishSubject">
+        <Name>OnValueChanged</Name>
+      </Expression>
+      <Expression xsi:type="VisualizerMapping" />
+      <Expression xsi:type="gui:ButtonBuilder">
+        <gui:Enabled>true</gui:Enabled>
+        <gui:Visible>true</gui:Visible>
+        <gui:Text>Click this</gui:Text>
+      </Expression>
+      <Expression xsi:type="rx:PublishSubject">
+        <Name>OnClick</Name>
+      </Expression>
+      <Expression xsi:type="VisualizerMapping" />
+      <Expression xsi:type="SubscribeSubject">
+        <Name>OnValueChanged</Name>
+      </Expression>
+      <Expression xsi:type="zg:RollingGraphBuilder">
+        <zg:SymbolType>None</zg:SymbolType>
+        <zg:LineWidth>1</zg:LineWidth>
+        <zg:CurveSettings>
+          <zg:CurveConfiguration>
+            <zg:Label>Trace</zg:Label>
+            <zg:Color />
+          </zg:CurveConfiguration>
+        </zg:CurveSettings>
+        <zg:Capacity xsi:nil="true" />
+        <zg:Min xsi:nil="true" />
+        <zg:Max xsi:nil="true" />
+      </Expression>
+      <Expression xsi:type="VisualizerMapping" />
+      <Expression xsi:type="SubscribeSubject">
+        <Name>OnValueChanged</Name>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Timestamp" />
+      </Expression>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>OnClick</Name>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Sample" />
+      </Expression>
+      <Expression xsi:type="zg:RollingGraphBuilder">
+        <zg:IndexSelector>Timestamp</zg:IndexSelector>
+        <zg:ValueSelector>Value</zg:ValueSelector>
+        <zg:SymbolType>Circle</zg:SymbolType>
+        <zg:LineWidth>0</zg:LineWidth>
+        <zg:CurveSettings>
+          <zg:CurveConfiguration>
+            <zg:Label>Marker</zg:Label>
+            <zg:Color>Red</zg:Color>
+          </zg:CurveConfiguration>
+        </zg:CurveSettings>
+        <zg:Capacity xsi:nil="true" />
+        <zg:Min xsi:nil="true" />
+        <zg:Max xsi:nil="true" />
+      </Expression>
+      <Expression xsi:type="VisualizerMapping" />
+      <Expression xsi:type="zg:RollingGraphPanelBuilder">
+        <zg:ReverseX>false</zg:ReverseX>
+        <zg:ReverseY>false</zg:ReverseY>
+        <zg:Span xsi:nil="true" />
+        <zg:Capacity xsi:nil="true" />
+        <zg:BaseAxis>X</zg:BaseAxis>
+        <zg:BarType>Cluster</zg:BarType>
+        <zg:Min xsi:nil="true" />
+        <zg:Max xsi:nil="true" />
+      </Expression>
+      <Expression xsi:type="VisualizerMapping" />
+      <Expression xsi:type="gui:TableLayoutPanelBuilder">
+        <gui:Enabled>true</gui:Enabled>
+        <gui:Visible>true</gui:Visible>
+        <gui:ColumnCount>2</gui:ColumnCount>
+        <gui:RowCount>2</gui:RowCount>
+        <gui:ColumnStyles />
+        <gui:RowStyles>
+          <gui:RowStyle>
+            <gui:SizeType>Absolute</gui:SizeType>
+            <gui:Height>64</gui:Height>
+          </gui:RowStyle>
+          <gui:RowStyle>
+            <gui:Height>0</gui:Height>
+          </gui:RowStyle>
+        </gui:RowStyles>
+        <gui:CellSpans>
+          <gui:CellSpan ColumnSpan="1" RowSpan="1" />
+          <gui:CellSpan ColumnSpan="1" RowSpan="1" />
+          <gui:CellSpan ColumnSpan="2" RowSpan="1" />
+        </gui:CellSpans>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="1" Label="Source1" />
+      <Edge From="1" To="2" Label="Source1" />
+      <Edge From="2" To="17" Label="Source1" />
+      <Edge From="3" To="4" Label="Source1" />
+      <Edge From="4" To="5" Label="Source1" />
+      <Edge From="5" To="17" Label="Source2" />
+      <Edge From="6" To="7" Label="Source1" />
+      <Edge From="7" To="8" Label="Source1" />
+      <Edge From="8" To="15" Label="Source1" />
+      <Edge From="9" To="10" Label="Source1" />
+      <Edge From="10" To="12" Label="Source1" />
+      <Edge From="11" To="12" Label="Source2" />
+      <Edge From="12" To="13" Label="Source1" />
+      <Edge From="13" To="14" Label="Source1" />
+      <Edge From="14" To="15" Label="Source2" />
+      <Edge From="15" To="16" Label="Source1" />
+      <Edge From="16" To="17" Label="Source3" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>

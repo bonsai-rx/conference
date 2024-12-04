@@ -1,0 +1,46 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Experiment",
+    "type": "object",
+    "properties": {
+        "trials": {
+            "type": "array",
+            "description": "Specifies the sequence of trials in one experiment.",
+            "items": { "$ref": "#/definitions/trial" }
+        }
+    },
+    "definitions": {
+        "gratings": {
+            "type": "object",
+            "description": "Specifies the parameters of a gratings stimulus.",
+            "properties": {
+                "x": {
+                    "type": "number",
+                    "description": "Specifies the X coordinate of the gratings."
+                },
+                "y": {
+                    "type": "number",
+                    "description": "Specifies the Y coordinate of the gratings."
+                },
+                "orientation": {
+                    "type": "number",
+                    "description": "Specifies the angle of the gratings."
+                }
+            },
+            "required": [ "x", "y", "orientation" ]
+        },
+
+        "trial": {
+            "type": "object",
+            "description": "Specifies the configuration parameters for a single trial.",
+            "properties": {
+                "stimuli": {
+                    "type": "array",
+                    "description": "Specifies the set of stimuli for each trial.",
+                    "items": { "$ref": "#/definitions/gratings" }
+                }
+            },
+            "required": [ "stimuli" ]
+        }
+    }
+}
