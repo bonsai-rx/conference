@@ -1,0 +1,123 @@
+{
+  "definitions": {
+    "GoTrial": {
+      "properties": {
+        "trial_type": {
+          "const": "go_trial",
+          "default": "go_trial",
+          "title": "Trial Type",
+          "type": "string"
+        },
+        "inter_trial_interval": {
+          "default": 1.0,
+          "description": "Interval between trials in seconds",
+          "minimum": 0.0,
+          "title": "Inter Trial Interval",
+          "type": "number"
+        },
+        "reward_amount": {
+          "default": 1,
+          "description": "Amount of reward given to the animal",
+          "minimum": 0,
+          "title": "Reward Amount",
+          "type": "integer"
+        },
+        "cue": {
+          "description": "Cue presented to the animal",
+          "title": "Cue",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cue"
+      ],
+      "title": "GoTrial",
+      "type": "object"
+    },
+    "NoGoTrial": {
+      "properties": {
+        "trial_type": {
+          "const": "nogo_trial",
+          "default": "nogo_trial",
+          "title": "Trial Type",
+          "type": "string"
+        },
+        "inter_trial_interval": {
+          "default": 1.0,
+          "description": "Interval between trials in seconds",
+          "minimum": 0.0,
+          "title": "Inter Trial Interval",
+          "type": "number"
+        },
+        "reward_amount": {
+          "default": 1,
+          "description": "Amount of reward given to the animal",
+          "minimum": 0,
+          "title": "Reward Amount",
+          "type": "integer"
+        },
+        "penalty": {
+          "description": "Penalty for incorrect response",
+          "title": "Penalty",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "penalty"
+      ],
+      "title": "NoGoTrial",
+      "type": "object"
+    },
+    "Trial": {
+      "discriminator": {
+        "mapping": {
+          "go_trial": "#/definitions/GoTrial",
+          "nogo_trial": "#/definitions/NoGoTrial"
+        },
+        "propertyName": "trial_type"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/definitions/GoTrial"
+        },
+        {
+          "$ref": "#/definitions/NoGoTrial"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "animal_id": {
+      "description": "ID of the animal",
+      "title": "Animal Id",
+      "type": "string"
+    },
+    "trials": {
+      "description": "List of trials in the experiment",
+      "items": {
+        "$ref": "#/definitions/Trial"
+      },
+      "title": "Trials",
+      "type": "array"
+    },
+    "rng_seed": {
+      "default": null,
+      "description": "Seed for the random number generator",
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Rng Seed"
+    }
+  },
+  "required": [
+    "animal_id",
+    "trials"
+  ],
+  "title": "ExperimentGoNoGo",
+  "type": "object"
+}

@@ -1,0 +1,58 @@
+{
+  "definitions": {
+    "Trial": {
+      "properties": {
+        "inter_trial_interval": {
+          "default": 1.0,
+          "description": "Interval between trials in seconds",
+          "minimum": 0.0,
+          "title": "Inter Trial Interval",
+          "type": "number"
+        },
+        "reward_amount": {
+          "default": 1,
+          "description": "Amount of reward given to the animal",
+          "minimum": 0,
+          "title": "Reward Amount",
+          "type": "integer"
+        }
+      },
+      "title": "Trial",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "animal_id": {
+      "description": "ID of the animal",
+      "title": "Animal Id",
+      "type": "string"
+    },
+    "trials": {
+      "description": "List of trials in the experiment",
+      "items": {
+        "$ref": "#/definitions/Trial"
+      },
+      "title": "Trials",
+      "type": "array"
+    },
+    "rng_seed": {
+      "default": null,
+      "description": "Seed for the random number generator",
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Rng Seed"
+    }
+  },
+  "required": [
+    "animal_id",
+    "trials"
+  ],
+  "title": "Experiment",
+  "type": "object"
+}
