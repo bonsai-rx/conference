@@ -5,7 +5,7 @@
 //----------------------
 
 
-namespace Experimentgonogo
+namespace ExperimentGoNoGo
 {
     #pragma warning disable // Disable all warnings
 

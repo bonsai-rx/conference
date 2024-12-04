@@ -29,7 +29,8 @@ class Experiment(BaseModel):
 if __name__ == "__main__":
     json_schema = export_schema(Experiment)
     schema_name = Experiment.__name__
-    schema_path = Path(rf"src/json/{pascal_to_snake_case(schema_name)}-schema.json")
+    _dashed = pascal_to_snake_case(schema_name).replace("_", "-")
+    schema_path = Path(rf"src/json/{_dashed}-schema.json")
     with open(schema_path, "w", encoding="utf-8") as f:
         f.write(json_schema)
 
@@ -49,7 +50,7 @@ if __name__ == "__main__":
     )
 
     with open(
-        rf"src/json/{pascal_to_snake_case(schema_name)}-example.json",
+        rf"src/json/{_dashed}-example.json",
         "w",
         encoding="utf-8",
     ) as f:

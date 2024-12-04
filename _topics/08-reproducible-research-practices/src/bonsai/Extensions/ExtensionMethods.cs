@@ -1,6 +1,6 @@
 using System;
 
-namespace Experimentgonogo
+namespace ExperimentGoNoGo
 {
     public partial class Trial
     {
