@@ -35,8 +35,8 @@ if __name__ == "__main__":
 
     bonsai_sgen(
         schema_path=schema_path,
-        output_path=Path(rf"src/bonsai/Extensions/{schema_name.capitalize()}.cs"),
-        namespace=schema_name.capitalize(),
+        output_path=Path(rf"src/bonsai/Extensions/{schema_name}.cs"),
+        namespace=schema_name,
         serializer=[BonsaiSgenSerializers.JSON, BonsaiSgenSerializers.YAML],
     )
 
