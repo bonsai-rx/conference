@@ -191,8 +191,8 @@ def export_schema(
     return json_model
 
 
-def screaming_snake_case_to_pascal_case(s: str) -> str:
-    words = s.split("_")
+def screaming_snake_case_to_pascal_case(value: str) -> str:
+    words = value.split("_")
     return "".join(word.capitalize() for word in words)
 
 
@@ -243,3 +243,15 @@ def bonsai_sgen(
         cmd_string += " --serializer"
         cmd_string += " ".join([f" {sr.value}" for sr in serializer])
     return run(cmd_string, shell=True, check=True)
+
+
+def pascal_to_snake_case(value: str) -> str:
+    result = ""
+    for i, char in enumerate(value):
+        if char.isupper():
+            if i != 0:
+                result += "_"
+            result += char.lower()
+        else:
+            result += char
+    return result
