@@ -16,6 +16,15 @@ Hardware Ecosystem
 
 ---
 
+# Contents
+
+- Map of existing packages
+- Different integration strategies
+- Planned roadmap
+- Questions
+
+---
+
 <style>
 img[alt~="top-right"] {
   position: absolute;
@@ -69,6 +78,21 @@ using (var capture = Capture.CreateCameraCapture(Index))
 Legacy media-streaming architecture for Microsoft Windows.
 
 - [Video package](https://github.com/bonsai-rx/video): uses the AForge library as a DirectShow access layer. Good compatibility with legacy capture cards and webcams but no plan to upgrade.
+
+---
+
+# Vendor SDK
+
+- Focused on data streaming API
+- Camera configuration in vendor GUI
+  - Trigger modes
+  - Binning
+  - Exposure
+  - ...
+- Extra frame metadata:
+  - Frame counter
+  - Hardware timestamp
+  - GPIO lines
 
 ---
 
