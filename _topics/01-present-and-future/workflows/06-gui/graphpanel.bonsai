@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.9.0-preview1+76e8ce94db5dd636925244a720164ef8694af513"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
+                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
+                 xmlns:scr="clr-namespace:Bonsai.Scripting.Expressions;assembly=Bonsai.Scripting.Expressions"
+                 xmlns:zg="clr-namespace:Bonsai.Gui.ZedGraph;assembly=Bonsai.Gui.ZedGraph"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="wie:KeyDown">
+          <wie:Filter>None</wie:Filter>
+          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>Trace</Name>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:WithLatestFrom" />
+      </Expression>
+      <Expression xsi:type="scr:ExpressionTransform">
+        <scr:Expression>new(Item2.X as Event)</scr:Expression>
+      </Expression>
+      <Expression xsi:type="zg:RollingGraphBuilder">
+        <zg:ValueSelector>Event</zg:ValueSelector>
+        <zg:SymbolType>Circle</zg:SymbolType>
+        <zg:LineWidth>0</zg:LineWidth>
+        <zg:CurveSettings>
+          <zg:CurveConfiguration>
+            <zg:Color>Red</zg:Color>
+          </zg:CurveConfiguration>
+        </zg:CurveSettings>
+        <zg:Capacity xsi:nil="true" />
+        <zg:Min xsi:nil="true" />
+        <zg:Max xsi:nil="true" />
+      </Expression>
+      <Expression xsi:type="VisualizerMapping" />
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="wie:MouseMove" />
+      </Expression>
+      <Expression xsi:type="rx:PublishSubject">
+        <Name>Trace</Name>
+      </Expression>
+      <Expression xsi:type="zg:RollingGraphBuilder">
+        <zg:ValueSelector>X,Y</zg:ValueSelector>
+        <zg:SymbolType>None</zg:SymbolType>
+        <zg:LineWidth>1</zg:LineWidth>
+        <zg:CurveSettings />
+        <zg:Capacity xsi:nil="true" />
+        <zg:Min xsi:nil="true" />
+        <zg:Max xsi:nil="true" />
+      </Expression>
+      <Expression xsi:type="VisualizerMapping" />
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Timer">
+          <rx:DueTime>PT0S</rx:DueTime>
+          <rx:Period>PT1S</rx:Period>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="scr:ExpressionTransform">
+        <scr:Expression>new(it * 100 as Counter)</scr:Expression>
+      </Expression>
+      <Expression xsi:type="zg:BarGraphBuilder">
+        <zg:ValueSelector>Counter</zg:ValueSelector>
+        <zg:BaseAxis>X</zg:BaseAxis>
+        <zg:BarType>Cluster</zg:BarType>
+        <zg:CurveSettings>
+          <zg:CurveConfiguration>
+            <zg:Color>#FFC080</zg:Color>
+          </zg:CurveConfiguration>
+        </zg:CurveSettings>
+        <zg:Capacity xsi:nil="true" />
+        <zg:Min xsi:nil="true" />
+        <zg:Max xsi:nil="true" />
+      </Expression>
+      <Expression xsi:type="VisualizerMapping" />
+      <Expression xsi:type="zg:RollingGraphPanelBuilder">
+        <zg:ReverseX>false</zg:ReverseX>
+        <zg:ReverseY>false</zg:ReverseY>
+        <zg:Span xsi:nil="true" />
+        <zg:Capacity xsi:nil="true" />
+        <zg:BaseAxis>X</zg:BaseAxis>
+        <zg:BarType>Cluster</zg:BarType>
+        <zg:Min xsi:nil="true" />
+        <zg:Max xsi:nil="true" />
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="2" Label="Source1" />
+      <Edge From="1" To="2" Label="Source2" />
+      <Edge From="2" To="3" Label="Source1" />
+      <Edge From="3" To="4" Label="Source1" />
+      <Edge From="4" To="5" Label="Source1" />
+      <Edge From="5" To="14" Label="Source1" />
+      <Edge From="6" To="7" Label="Source1" />
+      <Edge From="7" To="8" Label="Source1" />
+      <Edge From="8" To="9" Label="Source1" />
+      <Edge From="9" To="14" Label="Source2" />
+      <Edge From="10" To="11" Label="Source1" />
+      <Edge From="11" To="12" Label="Source1" />
+      <Edge From="12" To="13" Label="Source1" />
+      <Edge From="13" To="14" Label="Source3" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>
