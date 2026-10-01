@@ -1,0 +1,42 @@
+title: Bonsai Conference 2026
+logo: /assets/images/bonsai.svg
+email: conference@bonsai-rx.org
+description: |
+  December 7 to 9, 2026
+  Champalimaud Centre for the Unknown
+  Lisbon, Portugal
+baseurl: "/2026"
+url: https://conference.bonsai-rx.org
+github_username:  bonsai-rx
+mastodon:
+  - username: bonsai
+    instance: neuromatch.social
+
+# Default OG image
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      image: /assets/images/bonsai.png
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+include:
+  - _pages
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - "**README.md"
+
+header_pages:
+  - about.md
+  - _pages/program.md
+  - _pages/accommodation.md
+  - _pages/registration.md
