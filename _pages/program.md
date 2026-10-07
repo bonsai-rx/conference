@@ -4,49 +4,61 @@ title:  Program
 permalink: /program/
 ---
 
-|           | Monday                       | Tuesday           | Wednesday              |
-|:---------:|:----------------------------:|:-----------------:|:----------------------:|
-| 9am-12pm  | [Present and Future of Bonsai](#present-and-future-of-bonsai) | [Machine Learning and Quantifying Animal Behavior](#machine-learning-and-quantifying-animal-behavior) | [Hardware](#hardware) |
-| 12pm-1pm  | Lunch                        | Lunch             | Lunch                  |
-| 1pm-4pm   | [Immersive Environments and Task Control](#immersive-environments-and-task-control) | [Package Development and Reproducible Research Practices](#package-development-and-reproducible-research-practices) | [Roundtable](#roundtable) |
-| 4pm-5pm   | Tea                          | Tea               | Tea                    |
+|             | Monday                       | Tuesday           | Wednesday              |
+|:-----------:|:----------------------------:|:-----------------:|:----------------------:|
+| 09:00-10:45 | [Present and Future of Bonsai](#present-and-future-of-bonsai) | [Machine Learning and Quantifying Behavior](#machine-learning-and-quantifying-behavior) | [Hardware: Harp](#hardware-harp) |
+| 11:00-12:45 | [Posters and Show-and-Tell](#posters-and-show-and-tell) | [Immersive Environments](#immersive-environments) | [Hardware: ONIX](#hardware-onix) |
+| 12:45-14:00 | Lunch                        | Lunch             | Lunch                  |
+| 14:00-16:00 | [Task Control and Reproducible Research Practices](#task-control-and-reproducible-research-practices) | [Developing Bonsai with AI](#developing-bonsai-with-ai) | [Hackathon](#hackathon) |
 
 #### Present and Future of Bonsai
 
-**Abstract**: Bonsai has become a powerful platform for real-time data acquisition and closed-loop experimentation, widely used in neuroscience and other scientific domains. We will start the Bonsai Developer Conference by presenting the most recent developments in the language, visual editor, and package ecosystem, and share details on the future development roadmap. We will emphasize how our growing community is playing an increasing role in the development of Bonsai and how we hope to facilitate contributions and collaborations going forward.
+**Abstract**: Bonsai has become a powerful platform for real-time data acquisition and closed-loop experimentation, widely used in neuroscience and other scientific domains. We will open the Bonsai Developer Conference by presenting the most recent developments in the language, visual editor, and package ecosystem, including the redesigned editor navigation and package manager introduced in Bonsai 2.9, and share the roadmap toward Bonsai 3, from a modern .NET runtime to a cross-platform editor. We will also discuss how the project is governed: how changes to the language and ecosystem are proposed and decided, how packages are distributed and signed, and the role of the Bonsai Foundation in supporting a growing community of contributors.
 <br>
 <br>
 
-#### Immersive Environments and Task Control
+#### Posters and Show-and-Tell
 
-**Abstract**: Real-time closed-loop immersive environments are fundamental for next-generation understanding of brain function and behaviour, and also one of the most fun ways to learn reactive programming. With the introduction of BonVision and other high-level rendering packages in Bonsai, we are making it easier to do rapid prototyping of interactive virtual and augmented reality displays, as well as standard visual stimuli. In this session we will discuss how to create different kinds of immersive environments in Bonsai covering VR displays; vestibular, auditory and other sensory perturbations; and coupling of render engines to real-time input controllers and experimental hardware.
-
-Bonsai is still mostly used to drive data acquisition pipelines, but its potential to flexibly drive the logic of complex experiments is becoming more appreciated. In this session we will survey new and existing workflow patterns for complex and flexible control of tasks using Bonsai. These patterns allow the design of dynamic and parameterizable task structures that can be specified from external configuration files, external APIs, or graphical user interfaces. We will also present emerging approaches to create workflows for reconfigurable hardware, and new packages for designing graphical user interfaces and visualizations for online monitoring.
+**Abstract**: One of the main goals of the Bonsai Developer Conference is to promote collaborations and sharing across the Bonsai community. This session opens the floor to everyone attending, with posters and live demonstrations of workflows, packages, devices, and experiments built with Bonsai. Placing it early in the program gives everyone a chance to meet and find common interests that can carry over into the discussions of the following days. We strongly encourage anyone participating in the conference to propose a poster or demonstration in the registration form.
 <br>
 <br>
 
-#### Machine Learning and Quantifying Animal Behavior
+#### Task Control and Reproducible Research Practices
 
-**Abstract**: Typically, neuroscientists use Bonsai for acquisition but rely on other programming languages, such as Python and MATLAB, for offline processing with machine learning (ML) algorithms. Recently, we started adding ML functionality to Bonsai by developing packages that interface with powerful ML tools for online data analysis. In this session we will discuss the basics of online probabilistic machine learning, and introduce a new package Bonsai.ML which aims at extending Bonsai with online machine learning techniques, such as linear dynamical systems, hidden Markov models, online Bayesian linear regression and neural decoding models. We will provide examples and tutorials throughout the session and end with a discussion on the future of machine learning in Bonsai.
-
-The potential for closed-loop experiments and manipulations in neuroscience is most limited by our ability to measure animal behavior of interest in real-time. In this session we want to bring together and showcase the many growing options for using Bonsai and state-of-the-art machine learning and computer vision techniques to measure the behavior of animals in real-time, including 2D and 3D pose estimation, statistical techniques for inferring kinematics and behavior syllables, as well as hybrid approaches combining hardware and signal processing techniques to follow the behavior of animals over long periods of time in naturalistic and freely-moving settings.
+**Abstract**: Bonsai is increasingly used not only to acquire data but to specify the logic of complex experiments. In this session we will survey workflow patterns for flexible and parameterizable task control, where task structures and rig configurations are specified in external configuration files and schemas instead of being fixed inside workflows. We will show how code generation tools such as Bonsai.Sgen turn these schemas into typed configuration and metadata for both Bonsai workflows and Python analysis, and how experimental metadata, provenance, and standard data formats can be recorded alongside acquisition so that data can be accessed and explored as soon as it is collected. We will finish with a discussion of current limitations and best practices for reproducible research with Bonsai.
 <br>
 <br>
 
-#### Package Development and Reproducible Research Practices
+#### Machine Learning and Quantifying Behavior
 
-**Abstract**: This session will explore the process of developing new operators for Bonsai, highlighting strategies for designing modular and reusable code. In addition, we will cover recommendations for organizing and publishing community packages—such as choosing intuitive naming conventions, creating clear and meaningful operator icons, and ensuring efficient long-term maintenance. Finally, we will discuss the importance of comprehensive documentation, including how-to guides, technical references, and examples, to ensure that these tools can be effectively utilized and adopted by the broader scientific community.
-
-One of the most exciting opportunities introduced by the widespread adoption of Bonsai is the possibility of standardizing data formats and making reproducible data acquisition and analysis pipelines, allowing researchers to access and explore data as soon as it is collected. In this session we will discuss best practices for reproducible research using Bonsai, and showcase a set of flexible code generation tools and data formats developed to quickly integrate rich experimental metadata into data acquisition workflows. These tools and data formats provide a seamless bridge for analyzing both data and metadata using Python without sacrificing the flexibility and rapid prototyping needs of modern experimental design in neuroscience. We will finish with a discussion on current limitations and future research directions.
+**Abstract**: The potential for closed-loop experiments in neuroscience is most limited by our ability to measure the behavior of interest in real time. In this session we will bring together the growing options for online machine learning and computer vision in Bonsai, from pose estimation with SLEAP, DeepLabCut, and MediaPipe, to emerging work on synchronized multi-camera rigs and real-time 3D pose tracking. We will also present new developments in the Bonsai.ML package, including the integration of deep learning models through TorchSharp and online methods such as linear dynamical systems and neural decoding, and discuss how models trained offline can be deployed and adapted in live experiments.
 <br>
 <br>
 
-#### Hardware
+#### Immersive Environments
 
-**Abstract**: The use of Bonsai as a hardware integration platform is well known, but the full breadth of support for external hardware is often underappreciated. In this session we will discuss how hardware packages can leverage data standards to ensure interoperability with processing pipelines; present new and forthcoming device integrations including high-speed and high-resolution cameras, the Harp ecosystem, and state-of-the-art electrophysiology recording systems like Open Ephys and Neuropixels; and highlight different approaches being used to accelerate integration of new devices, such as code generation and modular configuration. Finally, we will explore emerging trends in hardware package distribution, including automatic firmware upgrades.
+**Abstract**: Real-time closed-loop immersive environments are fundamental for next-generation understanding of brain function and behavior, and also one of the most fun ways to learn reactive programming. In this session we will discuss how to create immersive environments in Bonsai, from interactive visual stimuli and virtual reality displays with BonVision, to multichannel spatial audio with the new Bonsai.Mixer package and interactive control panels with Bonsai.ImGui. We will also discuss how to couple rendering to real-time tracking and experimental hardware, and how to measure and minimize end-to-end latency in closed-loop stimulus presentation.
 <br>
 <br>
 
-#### Roundtable
+#### Developing Bonsai with AI
 
-**Abstract**: We will invite both participants and moderators to take part in a discussion on the future of Bonsai, its developer community, and the emerging role for the Bonsai Foundation in supporting this community-driven project. We will collect questions and topics for discussion for this roundtable from each of the conference sessions, to help us discover together what is unique about our developer community, its strengths and weaknesses, and what may be holding us back from tapping the potential of Bonsai for enabling broader neuroscientific enquiry.
+**Abstract**: AI coding assistants have made it easier than ever to write new Bonsai operators, packages, and workflows, but code that is quick to produce is not necessarily easy to review, maintain, or trust. In this session we will discuss how to use these tools productively in Bonsai development, and how project templates, continuous integration, documentation, and shared repository standards can keep the results consistent and maintainable. We will also look at how a headless editor and command-line tools open Bonsai to automation, and at the role of AI tools in teaching and learning Bonsai. The discussion leads directly into the hackathon on the following day.
+<br>
+<br>
+
+#### Hardware: Harp
+
+**Abstract**: Harp is an open standard for hardware-timestamped data acquisition and experimental control, designed from the outset to interface with Bonsai. In this session we will present the current state of the Harp ecosystem: the first tagged release of the specification and progress toward Harp 2.0, firmware cores for both ATxmega and RP2040 microcontrollers, and a growing family of devices developed across institutions. We will demonstrate the new command-line toolkit for checking a device against the specification, updating firmware, and generating firmware, Bonsai, and Python interfaces from a single device description, together with the Harp Python packages for reading recorded data. We will finish with a discussion of how the standard is evolving and how new devices and contributors can join.
+<br>
+<br>
+
+#### Hardware: ONIX
+
+**Abstract**: ONIX is an open-source acquisition platform from Open Ephys for electrophysiology and other neural recordings in freely moving animals, integrated with Bonsai through the OpenEphys.Onix1 package. In this session we will present recent developments, including support for Neuropixels 2.0 probes, probe configuration through standard ProbeInterface files, efficient logging of acquisition data to Apache Arrow, and new tools for visualizing probe data in real time. We will also cover related hardware such as Miniscopes and commutators, and how ONIX and Harp devices can be combined and synchronized in the same experiment.
+<br>
+<br>
+
+#### Hackathon
+
+**Abstract**: We will close the conference with a hackathon in the Teaching Lab. Bring a problem, a workflow, a device, or an idea for a new package, and work on it together with other participants and the Bonsai developers. There will be no talks. The afternoon is entirely for building, fixing, and learning from each other.
