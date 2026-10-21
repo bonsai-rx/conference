@@ -13,3 +13,11 @@ Organizers
 - [Gonçalo Lopes](https://github.com/glopesdev), NeuroGEARS
 - [João Frazão](https://github.com/jfrazao), NeuroGEARS
 - [Hugo Marques](https://www.fchampalimaud.org/people/hugo-marques), Champalimaud Foundation
+
+With the support of
+
+<div class="partner-logos">
+  <a href="https://bonsai-rx.org/foundation/"><img src="{{ '/assets/images/logo-bonsai-foundation.svg' | relative_url }}" alt="Bonsai Foundation"></a>
+  <a href="https://www.fchampalimaud.org/"><img src="{{ '/assets/images/logo-champalimaud-foundation.svg' | relative_url }}" alt="Champalimaud Foundation"></a>
+  <a href="https://neurogears.org/"><img src="{{ '/assets/images/logo-neurogears.svg' | relative_url }}" alt="NeuroGEARS"></a>
+</div>

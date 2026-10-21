@@ -11,3 +11,15 @@
 	width: 37px;
 	top: 5px;
 }
+
+.partner-logos {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+
+	img {
+		height: 84px;
+		width: auto;
+	}
+}
