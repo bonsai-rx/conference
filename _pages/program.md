@@ -7,7 +7,7 @@ permalink: /program/
 |             | Monday                       | Tuesday           | Wednesday              |
 |:-----------:|:----------------------------:|:-----------------:|:----------------------:|
 | 09:00-10:45 | [Present and Future of Bonsai](#present-and-future-of-bonsai) | [Machine Learning and Quantifying Behavior](#machine-learning-and-quantifying-behavior) | [Hardware: Harp](#hardware-harp) |
-| 11:00-12:45 | [Posters and Show-and-Tell](#posters-and-show-and-tell) | [Immersive Environments](#immersive-environments) | [Hardware: ONIX](#hardware-onix) |
+| 11:00-12:45 | [Community Projects](#community-projects) | [Immersive Environments](#immersive-environments) | [Hardware: ONIX](#hardware-onix) |
 | 12:45-14:00 | Lunch                        | Lunch             | Lunch                  |
 | 14:00-16:00 | [Task Control and Reproducible Research Practices](#task-control-and-reproducible-research-practices) | [Developing Bonsai with AI](#developing-bonsai-with-ai) | [Hackathon](#hackathon) |
 
@@ -17,9 +17,9 @@ permalink: /program/
 <br>
 <br>
 
-#### Posters and Show-and-Tell
+#### Community Projects
 
-**Abstract**: One of the main goals of the Bonsai Developer Conference is to promote collaborations and sharing across the Bonsai community. This session opens the floor to everyone attending, with posters and live demonstrations of workflows, packages, devices, and experiments built with Bonsai. Placing it early in the program gives everyone a chance to meet and find common interests that can carry over into the discussions of the following days. We strongly encourage anyone participating in the conference to propose a poster or demonstration in the registration form.
+**Abstract**: One of the main goals of the Bonsai Developer Conference is to promote collaborations and sharing across the Bonsai community. This session opens the floor to everyone attending to share workflows, packages, devices, and experiments built with Bonsai, in a format we will announce closer to the conference. Placing it early in the program gives everyone a chance to meet and find common interests that can carry over into the discussions of the following days. We strongly encourage anyone participating in the conference to propose a contribution in the registration form.
 <br>
 <br>
 
